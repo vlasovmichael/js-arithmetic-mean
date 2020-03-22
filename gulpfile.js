@@ -10,8 +10,8 @@ var gulp = require('gulp'),
   notify = require('gulp-notify'),
   fileinclude = require('gulp-file-include'),
   rigger = require('gulp-rigger'),
-  mainBowerFiles = require('gulp-main-bower-files'),
-	spritesmith = require('gulp.spritesmith'),
+  // mainBowerFiles = require('gulp-main-bower-files'),
+	// spritesmith = require('gulp.spritesmith'),
   svgSprite = require("gulp-svg-sprites"),
   clean = require('gulp-clean'),
   sourcemaps = require('gulp-sourcemaps')
@@ -46,13 +46,6 @@ gulp.task('sass', function () {
     .pipe(connect.reload());
 });
 
-// bower main files
-gulp.task('main-bower-files', function() {
-    return gulp.src('bower_components/jquery/dist/jquery.min.js')
-      // .pipe(mainBowerFiles([[filter, ]options][, callback]))
-      .pipe(gulp.dest('src/js'));
-});
-
 // html
 gulp.task('html', function () {
   gulp.src('src/*.html')
@@ -75,23 +68,6 @@ gulp.task('js', function () {
   .pipe(connect.reload());
 });
 
-// spritesmith
-gulp.task('spritesmith', function () {
-  var spriteData = gulp.src('src/img/sprite/*.png').pipe(spritesmith({
-    imgName: 'sprite.png',
-    cssName: '_sprite.scss',
-    imgPath:'../img/sprite.png',
-    algorithm: 'diagonal',
-    padding: 10
-  }));
-   // Pipe image stream through image optimizer and onto disk 
-  var imgStream = spriteData.img
-    .pipe(gulp.dest('src/img')).pipe(connect.reload());
- 
-  // Pipe CSS stream through CSS optimizer and onto disk 
-  var cssStream = spriteData.css
-    .pipe(gulp.dest('src/sass')).pipe(connect.reload());
-});
 
 // svg sprites
 gulp.task('svgSprite', function () {
@@ -123,7 +99,6 @@ gulp.task('clean', function () {
 // watch
 gulp.task('watch', function () {
   gulp.watch('src/img/**/*', ['img'])
-  gulp.watch('src/img/sprite/*', ['spritesmith'])
   gulp.watch('src/fonts/**/*', ['fonts'])
 	gulp.watch('src/*.html', ['html'])
   gulp.watch('src/layouts/*.html', ['html'])
@@ -134,4 +109,4 @@ gulp.task('watch', function () {
 })
 
 // default
-gulp.task('default', ['connect', 'html', 'sass', 'js', 'img', 'spritesmith', 'svgSprite', 'fonts', 'watch']);
+gulp.task('default', ['connect', 'html', 'sass', 'js', 'img', 'svgSprite', 'fonts', 'watch']);

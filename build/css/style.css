@@ -1,2 +1,15 @@
+.wrapper { max-width: 1230px; -webkit-box-sizing: border-box; box-sizing: border-box; margin: 0 auto; }
+
+.static-inputs input[type="text"], .dinamic-inputs input[type="text"] { margin-bottom: 15px; width: 100%; max-width: 200px; display: block; }
+
+.dinamic-inputs input[type="text"] { margin-bottom: 0; }
+
+.dinamic-inputs__el { display: -webkit-box; display: -webkit-flex; display: -ms-flexbox; display: flex; -webkit-box-align: center; -webkit-align-items: center; -ms-flex-align: center; align-items: center; margin-bottom: 15px; }
+
+.dinamic-inputs__remove { margin-left: 10px; display: block; cursor: pointer; }
+
+.dinamic-inputs__remove:hover i:before { color: #444444; }
+
+.add-field { margin-bottom: 30px; }
 
 /*# sourceMappingURL=../maps/style.css.map */

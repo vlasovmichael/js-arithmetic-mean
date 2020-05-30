@@ -7,6 +7,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 	<title>Index</title>
 	<link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,600,700" rel="stylesheet">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css">
 	<link rel="stylesheet" href="https://unpkg.com/purecss@1.0.1/build/pure-min.css" integrity="sha384-oAOxQR6DkCoMliIh8yFnu25d7Eq/PHS21PClpwjOTeU2jRSq11vu66rf90/cZr47" crossorigin="anonymous">
 	<link rel="stylesheet" href="css/style.css" />		
 </head>
@@ -14,18 +15,36 @@
 
 	<div class="out">
 		
-<div class="pure-g">
-    <div class="pure-u-1-3">
-        <form class="pure-form">
-            <fieldset>
-                <legend>A compact inline form</legend>
-        
-                <input type="email">
-                <input type="password">
-        
-                <button type="submit" class="pure-button pure-button-primary">Calculate</button>
-            </fieldset>
-        </form>
+<div class="wrapper">
+    <div class="pure-g">
+        <div class="pure-u-1">
+            <h1>Сalculate the arithmetic mean</h1>
+        </div>
+    </div>
+    <div class="pure-g">
+        <div class="pure-u-1-4">
+            <form class="pure-form" name="arithmeticMean">
+                <fieldset>
+                    <legend>Enter a value</legend>
+                    <div class="static-inputs">
+                        <input type="text">
+                        <input type="text">
+                    </div>
+
+                    <div class="dinamic-inputs js-dinamic-inputs"></div>
+
+                    <div class="add-field">
+                        <button type="button" class="button-secondary pure-button js-add-field">Add Field</button>
+                    </div>
+            
+                    <button type="submit" class="pure-button pure-button-primary js-submit">Calculate</button>
+
+                    <p>
+                        Result is : <span id="result">0</span>
+                    </p>
+                </fieldset>
+            </form>
+        </div>
     </div>
 </div>
 
